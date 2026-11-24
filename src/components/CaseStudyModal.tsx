@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ArrowLeft, ArrowRight, X } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ExternalLink, X } from 'lucide-react';
 import type { ProjectWork } from '../data/portfolioData';
 import { getAdjacentProjects } from '../utils/portfolio';
 import { ExhibitionPlate } from './ExhibitionPlate';
@@ -140,6 +140,20 @@ export function CaseStudyModal({
             </div>
           ))}
         </div>
+
+        {project.liveUrl && (
+          <div className="mt-6 flex justify-end">
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[var(--btn-primary-bg)] text-[13px] font-semibold text-[var(--btn-primary-text)] hover:brightness-105 transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--text-accent-blue)]"
+            >
+              <span>Visit Live Project</span>
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          </div>
+        )}
 
         {/* Narrative Sections */}
         <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">

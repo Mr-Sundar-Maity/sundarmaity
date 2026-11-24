@@ -1,4 +1,4 @@
-export type DisciplineCategory = 'All Works' | 'Full-Stack' | 'API Based';
+export type DisciplineCategory = 'All Works' | 'Full-Stack' | 'API Based' | 'Python (AI/ML)';
 
 export interface ProjectPlate {
   id: string;
@@ -36,6 +36,7 @@ export interface ProjectWork {
   materialInquiry: string;
   outcome: string;
   collaborators: string;
+  liveUrl?: string;
   specifications: ProjectSpecification[];
   plates: ProjectPlate[];
 }
@@ -74,10 +75,11 @@ export const DISCIPLINE_CATEGORIES: DisciplineCategory[] = [
   'All Works',
   'Full-Stack',
   'API Based',
+  'Python (AI/ML)',
 ];
 
 export const KEY_PRACTICE_METRICS = [
-  { figure: '04', label: 'Core Full-Stack & API Projects' },
+  { figure: '06', label: 'Core Full-Stack, API & AI/ML Projects' },
   { figure: '04', label: 'Internships & Industry Roles' },
   { figure: '10+', label: 'Languages, Frameworks & Databases' },
   { figure: '2026', label: 'Jr. Developer · Active Practice' },
@@ -244,6 +246,90 @@ export const PROJECTS: ProjectWork[] = [
         id: 'ai2',
         label: 'Plate II — Voice Request Loop',
         caption: 'Speech capture, API intent dispatch, and spoken/text response playback.',
+        variant: 'api-voice',
+      },
+    ],
+  },
+  {
+    id: 'student-pass-fail-system',
+    slug: 'student-pass-fail-system',
+    indexNumber: '05',
+    title: 'Student Pass Fail System',
+    category: 'Python (AI/ML)',
+    year: '2026',
+    location: 'Python · Machine Learning · Academic Analytics',
+    clientOrInstitution: 'AI-Integrated Academic Performance Platform',
+    featured: true,
+    featuredLabel: 'AI-Integrated System',
+    excerpt:
+      'AI-based academic performance prediction platform with role-based dashboards, evaluated ML models, bulk CSV/Excel processing, semester rule aggregation, and downloadable reports.',
+    context:
+      'Designed to help academic teams identify pass/fail risk earlier by transforming marks and attendance records into consistent predictions, cohort summaries, and actionable student-level insights.',
+    materialInquiry:
+      'Built a Python machine-learning workflow for structured academic data, model evaluation, bulk spreadsheet ingestion, semester-rule aggregation, and role-aware presentation of prediction results.',
+    outcome:
+      'Delivers individual and bulk performance analysis, clear pass/fail indicators, downloadable reports, and dashboard views that make academic intervention faster and more evidence-driven.',
+    collaborators: 'Python AI/ML Engineering · Academic Analytics Build',
+    liveUrl: 'https://studentpassfailsystem.web.app/',
+    specifications: [
+      { label: 'Core', value: 'Python + ML' },
+      { label: 'Input', value: 'CSV / Excel' },
+      { label: 'Analysis', value: 'Pass/Fail Risk' },
+      { label: 'Output', value: 'Reports' },
+    ],
+    plates: [
+      {
+        id: 'spfs1',
+        label: 'Plate I — Prediction Pipeline',
+        caption: 'Academic records move through validation, feature preparation, and ML inference.',
+        variant: 'api-vision',
+      },
+      {
+        id: 'spfs2',
+        label: 'Plate II — Cohort Analytics',
+        caption: 'Semester aggregation, risk indicators, and downloadable reporting workflow.',
+        variant: 'expense-analytics',
+      },
+    ],
+  },
+  {
+    id: 'smart-medicine-healthcare-assistance',
+    slug: 'smart-medicine-healthcare-assistance',
+    indexNumber: '06',
+    title: 'Smart Medicine & Healthcare Assistance System',
+    category: 'Python (AI/ML)',
+    year: '2026',
+    location: 'Python · AI/ML · OCR · Healthcare',
+    clientOrInstitution: 'VeroMed Healthcare & Pharmacy Platform',
+    featured: true,
+    featuredLabel: 'AI-Integrated Healthcare',
+    excerpt:
+      'Unified patient and pharmacy assistance platform with medication adherence tracking, AI prescription OCR, interaction verification, and ML-powered medicine demand forecasting.',
+    context:
+      'Created to connect day-to-day patient medication support with pharmacy operations, reducing manual prescription entry while improving medicine safety, adherence visibility, and stock planning.',
+    materialInquiry:
+      'Integrated AI prescription OCR, medicine interaction verification, adherence tracking, and a Python ML forecasting workflow that converts pharmacy demand history into inventory guidance.',
+    outcome:
+      'Provides a single healthcare assistance experience for prescription understanding, medication routines, safety checks, and smarter pharmacy demand decisions.',
+    collaborators: 'Python AI/ML Engineering · Healthcare Assistance Build',
+    liveUrl: 'https://veromedphm.web.app',
+    specifications: [
+      { label: 'Core', value: 'Python + AI/ML' },
+      { label: 'Vision', value: 'Prescription OCR' },
+      { label: 'Safety', value: 'Interaction Check' },
+      { label: 'Forecast', value: 'Medicine Demand' },
+    ],
+    plates: [
+      {
+        id: 'vm1',
+        label: 'Plate I — Prescription Intelligence',
+        caption: 'OCR extraction, medicine verification, and interaction checking pipeline.',
+        variant: 'api-vision',
+      },
+      {
+        id: 'vm2',
+        label: 'Plate II — Care & Demand Loop',
+        caption: 'Medication adherence signals connected to pharmacy demand forecasting.',
         variant: 'api-voice',
       },
     ],

@@ -34,6 +34,13 @@ test('filterProjects narrows down by discipline category accurately', () => {
   const apiBased = filterProjects(PROJECTS, 'API Based');
   assert.equal(apiBased.length, 1);
   assert.equal(apiBased[0]?.id, 'ai-api-toolkit');
+
+  const pythonAiMl = filterProjects(PROJECTS, 'Python (AI/ML)');
+  assert.equal(pythonAiMl.length, 2);
+  assert.deepEqual(
+    pythonAiMl.map((project) => project.id),
+    ['student-pass-fail-system', 'smart-medicine-healthcare-assistance']
+  );
 });
 
 test('filterProjects combines category and keyword query', () => {

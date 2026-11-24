@@ -31,6 +31,12 @@ export function WorksGallery({ projects, onSelectProject }: WorksGalleryProps) {
     setSearchQuery('');
   };
 
+  const handleCatalogueIndex = () => {
+    setActiveCategory('All Works');
+    setSearchQuery('');
+    setViewMode('index');
+  };
+
   return (
     <section id="work" className="scroll-mt-24 py-16 sm:py-24 px-5 sm:px-8 lg:px-16">
       <div className="max-w-[1360px] mx-auto">
@@ -130,7 +136,7 @@ export function WorksGallery({ projects, onSelectProject }: WorksGalleryProps) {
               </button>
               <button
                 type="button"
-                onClick={() => setViewMode('index')}
+                onClick={handleCatalogueIndex}
                 aria-pressed={viewMode === 'index'}
                 className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[13px] font-medium transition-colors whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-[var(--text-accent-blue)] ${
                   viewMode === 'index'
